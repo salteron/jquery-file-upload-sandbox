@@ -1,42 +1,42 @@
-*.rbc
-capybara-*.html
-.rspec
-/log
-/tmp
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/public/system
-/coverage/
-/spec/tmp
-**.orig
-rerun.txt
-pickle-email-*.html
-
-# TODO Comment out these rules if you are OK with secrets being uploaded to the repo
-config/initializers/secret_token.rb
-config/secrets.yml
-
-# dotenv
-# TODO Comment out this rule if environment variables can be committed
-.env
-
-## Environment normalization:
+# Ignore system directories.
 /.bundle
-/vendor/bundle
+/.ruby-gemset
 
-# these should all be checked in to normalize the environment:
-# Gemfile.lock, .ruby-version, .ruby-gemset
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
 
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
+# Ignore all runtime static files
+/public/system
 
-# if using bower-rails ignore default bower_components path bower.json files
-/vendor/assets/bower_components
-*.bowerrc
-bower.json
+# Ignore tmp files.
+*~
+*#
+.#*
 
-# Ignore pow environment settings
-.powenv
+# Ignore local settings.
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
 
-# Ignore Byebug command history file.
-.byebug_history
+# Ignore database config.
+config/database.yml
+
+# Ignore schema.
+/db/schema.rb
+
+# Ignore test coverage.
+/coverage
+
+# Ignore MacOs Finder
+.DS_Store
+
+# Ignore IDE files
+.idea/
+
+# Ignote Ctags
+tags
+TAGS
+
+# Byebug history
+/.byebug_history
