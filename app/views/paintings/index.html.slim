@@ -4,5 +4,5 @@
 
 = form_for Painting.new do |f|
   = f.label :image, 'Upload paintings'
-  = f.file_field :image
+  = f.file_field :image, multiple: true, name: 'painting[image]'
   = f.submit 'upload'

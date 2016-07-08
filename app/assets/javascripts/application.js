@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.widget
+//= require jquery.fileupload
+//= require jquery.iframe-transport
 //= require turbolinks
 //= require_tree .
