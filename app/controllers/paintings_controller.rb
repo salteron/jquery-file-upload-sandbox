@@ -28,7 +28,7 @@ class PaintingsController < ApplicationController
 
     respond_to do |format|
       if @painting.save
-        format.html { redirect_to @painting, notice: 'Painting was successfully created.' }
+        format.html { redirect_to paintings_url, notice: 'Painting was successfully created.' }
         format.json { render :show, status: :created, location: @painting }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PaintingsController < ApplicationController
   def update
     respond_to do |format|
       if @painting.update(painting_params)
-        format.html { redirect_to @painting, notice: 'Painting was successfully updated.' }
+        format.html { redirect_to paintings_url, notice: 'Painting was successfully updated.' }
         format.json { render :show, status: :ok, location: @painting }
       else
         format.html { render :edit }
@@ -70,6 +70,7 @@ class PaintingsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def painting_params
-    params.require(:painting).permit(:image)
+    params.permit!
+    params.fetch(:painting, {})
   end
 end
