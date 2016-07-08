@@ -62,13 +62,14 @@ class PaintingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_painting
-      @painting = Painting.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def painting_params
-      params.fetch(:painting, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_painting
+    @painting = Painting.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def painting_params
+    params.require(:painting).permit(:image)
+  end
 end
