@@ -1,0 +1,8 @@
+- if @painting.new_record?
+  | alert("
+  = j @painting.errors.full_messages.join(',')
+  |");
+- else
+  | $("#paintings").append("
+  = j render(@painting)
+  | ");
